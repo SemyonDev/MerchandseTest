@@ -16,13 +16,12 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainActivityViewModel by viewModel()
     private var merchandiseRVAdapter = MerchandiseRVAdapter(emptyList())
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.activityMainLoading.visibility = View.VISIBLE
-        viewModel.merchandiseList.observe(this, androidx.lifecycle.Observer {
+        viewModel.merchandiseList.observe(this, {
             merchandiseRVAdapter.addItems(it.merchandises)
             binding.activityMainRv.apply {
                 binding.activityMainLoading.visibility = View.GONE
