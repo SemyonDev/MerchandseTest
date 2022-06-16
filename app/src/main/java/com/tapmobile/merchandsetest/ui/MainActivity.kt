@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainActivityViewModel by viewModel()
     private var merchandiseRVAdapter = MerchandiseRVAdapter(emptyList())
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
